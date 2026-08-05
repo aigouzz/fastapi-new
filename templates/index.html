@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{name}}</title>
+    <link href="{{url_for('statics', path='css/index.css')}}" rel="stylesheet" />
+</head>
+<body>
+    <h1>{{title}}</h1>
+    <div class="index_top">
+        <p>FastAPI 版本: {{fastapi_version}}</p>
+        <p> Python 版本: {{python_version}}</p>
+    </div>
+    <a href="{{url_for('play', video_id=id)}}">视频</a>
+</body>
+</html>

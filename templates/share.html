@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>分享</title>
+    <link href="{{url_for('statics', path='css/share.css')}}" rel="stylesheet" />
+</head>
+<body>
+    <h1>全部下载文件分享页面</h1>
+    <ul>
+        {% for file in all_files %}
+            <li>
+                <div>文件名： {{file.file_name}}</div>
+                <a href="{{url_for('file_page', file_local=file.file_local)}}">{{ file.file_local }}</a>
+                <a href="{{url_for('file_page', file_local=file.file_local)}}?share_code={{ file.code }}">{{ file.code }}</a>
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

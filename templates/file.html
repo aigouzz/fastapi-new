@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>下载页面</title>
+</head>
+<body>
+    <h1>文件下载页面</h1>
+    <div>要下载的文件：{{ file_name }}</div>
+    <form action="{{  url_for('download_file', file_local=file_local) }}" method="post">
+        <label for="share_code">请输入分享码：</label>
+        <input type="text" id="share_code" name="share_code" required value="{{ share_code if share_code else '' }}">
+        <button type="submit">下载文件</button>
+    </form>
+</body>
+</html>
